@@ -31,6 +31,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem 'factory-girl-rails'
+  gem 'fixture-builder'
 end
 
 # Use ActiveModel has_secure_password
