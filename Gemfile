@@ -38,6 +38,8 @@ group :development, :test do
 	gem 'database_cleaner'
   gem 'capybara'
 	gem 'selenium-webdriver'
+  gem 'factory-girl-rails'
+  gem 'fixture-builder'
 end
 
 # Use ActiveModel has_secure_password
