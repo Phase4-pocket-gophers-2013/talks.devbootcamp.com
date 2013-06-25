@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  include UsersHelper
+
+  include AuthenticationConcern
+
+  skip_before_action :ensured_logged_in, :only => [:create]
 
   def create
     session.clear
@@ -10,7 +13,7 @@ class UsersController < ApplicationController
     else
       @user.errors.delete(:password_digest)
       flash[:error] = @user.errors.full_messages
-      root_path
+      redirect_to root_path
     end
   end
 

@@ -1,6 +1,6 @@
 class TalksController < ApplicationController
-  include UsersHelper
-
+  include AuthenticationConcern
+  
   def show
     @talk = Talk.find(params[:id])
     @user  = current_user
@@ -17,7 +17,7 @@ class TalksController < ApplicationController
       if @talk.save
         redirect_to talk_path(@talk)
       else
-        redirect_to user_path(@user)
+        redirect_to user_path(current_user)
       end
     else
       redirect_to root_path
