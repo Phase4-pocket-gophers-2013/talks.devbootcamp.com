@@ -1,12 +1,15 @@
 <h1>Welcome <%= @user.username %></h1>
 <h2>You're in!</h2>
 <% if @user.teacher %>
+	<h3>Teacher</h3>
   <%= form_for @talk do |f| %>
     <%= f.text_field :title, :placeholder => "Title" %>
     <%= f.text_field :content, :placeholder => "Content" %>
     <%= f.text_field :youtube_url, :placeholder => 'Youtube URL' %>
     <%= f.submit 'Create talk' %>
   <% end %>
+<% else %>
+  <h3>Boot</h3>
 <% end %>
 <%= link_to "View Talks", talks_path %>
 <%= link_to "Logout", session_path, :method => 'delete' %>
