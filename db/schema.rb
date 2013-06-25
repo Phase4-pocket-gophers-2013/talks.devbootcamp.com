@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130624233731) do
+ActiveRecord::Schema.define(version: 20130625073134) do
+
+  create_table "talks", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.text     "youtube_url"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string  "username"

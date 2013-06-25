@@ -5,4 +5,17 @@ module UsersHelper
     end
     false
   end
+
+  def teacher
+    if session[:user_id]
+      @current_user = User.find_by_username(session[:user_id])
+      if @current_user.teacher == true
+        @current_user
+      else
+        false
+      end
+    else
+      false
+    end
+  end
 end

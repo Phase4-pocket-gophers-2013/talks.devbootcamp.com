@@ -2,6 +2,8 @@
   <%= f.text_field :username, :placeholder => "Username" %>
   <%= f.text_field :password, :placeholder => "Password" %>
   <%= f.text_field :password_confirmation, :placeholder => 'Password Confirmation' %>
+  <%= f.label :teacher %>
+  <%= f.check_box :teacher %>
   <%= f.submit 'Signup' %>
 <% end %>
 

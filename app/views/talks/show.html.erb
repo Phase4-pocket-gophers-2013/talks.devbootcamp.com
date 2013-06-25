@@ -1,0 +1,8 @@
+<h1><%= @talk.title %></h1>
+
+<iframe width="853px" height="480px" src="<%= @talk.youtube_url %>" frameborder="0" allowfullscreen></iframe>
+
+<p><%= @talk.content %></p>
+
+<%= link_to "View Talks", talks_path %>
+<%= link_to "Profile ", user_path(@user) %>

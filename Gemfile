@@ -44,6 +44,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'fixture_builder'
   gem 'debugger'
+  gem 'sextant'
 end
 
 
