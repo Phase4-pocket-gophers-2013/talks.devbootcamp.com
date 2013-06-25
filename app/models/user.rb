@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :talks
 
+  def to_param
+    self.username
+  end
+
 end

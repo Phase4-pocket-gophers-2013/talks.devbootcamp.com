@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     session.clear
     @user = User.new(user_profile_parameters)
     if @user.save
-      session[:user_id] = @user.username
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       @user.errors.delete(:password_digest)
