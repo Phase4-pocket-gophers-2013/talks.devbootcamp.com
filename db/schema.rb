@@ -11,9 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130625073134) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "talks", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.text     "youtube_url"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string  "username"
+    t.string  "password_digest"
+    t.boolean "teacher",         default: false
+  end
 
 end
