@@ -13,7 +13,6 @@ class TalksController < ApplicationController
 
   def create
     if teacher 
-    p "innnnnn"
       @talk = Talk.new(talk_parameters)
       if @talk.save
         redirect_to talk_path(@talk)
