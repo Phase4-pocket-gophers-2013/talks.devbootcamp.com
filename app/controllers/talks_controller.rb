@@ -1,8 +1,7 @@
 class TalksController < ApplicationController
-  include UsersHelper
-
+  include AuthenticationConcern
+  
   def show
-    # debugger
     @talk = Talk.find(params[:id])
     @user  = current_user
   end
