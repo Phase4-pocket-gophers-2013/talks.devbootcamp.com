@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
   
-  def login
+  def create
     session.clear
     @user  = User.find_by_username(params[:username])
     
@@ -12,7 +12,7 @@ class SessionController < ApplicationController
     end
   end
 
-  def logout
+  def destroy
     session.clear
     redirect_to root_path
   end

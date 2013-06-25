@@ -2,8 +2,7 @@ Talks::Application.routes.draw do
   resources :users, :only => [:create, :show]
   resources :talks, :only => [:index, :create, :show]
   
-  post '/login' => 'session#login', :as => 'session_login'
-  post '/logout' => 'session#logout', :as => 'session_logout'
+  resources :session, :only => [:create, :destroy]
 
-  root :to => 'pages#main'
+  root :to => 'homepage#show'
 end
