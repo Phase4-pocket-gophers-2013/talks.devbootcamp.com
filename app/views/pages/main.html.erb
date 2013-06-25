@@ -1,0 +1,11 @@
+<%= form_for @user do |f| %>
+  <%= f.text_field :username, :placeholder => "Username" %>
+  <%= f.text_field :password, :placeholder => "Password" %>
+  <%= f.text_field :password_confirmation, :placeholder => 'Password Confirmation' %>
+  <%= f.submit 'Signup' %>
+<% end %>
+
+<%= form_tag session_login_path %>
+  <%= text_field_tag :username, nil, :placeholder => "Username"  %>
+  <%= text_field_tag :password, nil, :placeholder => "Password"  %>
+  <%= submit_tag 'Login' %>
