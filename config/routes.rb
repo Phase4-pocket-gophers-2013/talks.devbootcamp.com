@@ -3,4 +3,6 @@ Talks::Application.routes.draw do
   
   post '/login' => 'session#login', :as => 'session_login'
   post '/logout' => 'session#logout', :as => 'session_logout'
+
+  root :to => 'pages#main'
 end
