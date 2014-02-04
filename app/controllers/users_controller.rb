@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     else
       @user.errors.delete(:password_digest)
       flash[:error] = @user.errors.full_messages
-      root_path
+      redirect_to root_path
     end
   end
 
